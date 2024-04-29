@@ -47,6 +47,20 @@ You can then execute your native executable with: `./target/quarkus-camel-mongod
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
+## Build and Deploy on OpenShift
+
+Quarkus CLI
+```
+quarkus build -Dquarkus.kubernetes-client.api-server-url=<your-openshift-cluster-api-endpoint> -Dquarkus.kubernetes-client.token=<your-openshift-token>
+quarkus build -Dquarkus.openshift.deploy=true
+```
+
+Maven
+```
+./mvnw -X install -Dquarkus.kubernetes-client.api-server-url=m<your-openshift-cluster-api-endpoint> -Dquarkus.kubernetes-client.token=<your-openshift-token>
+./mvnw -X install -Dquarkus.openshift.deploy=true
+```
+
 ## Related Guides
 
 - MongoDB client ([guide](https://quarkus.io/guides/mongodb)): Connect to MongoDB in either imperative or reactive style
