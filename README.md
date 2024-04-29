@@ -49,10 +49,15 @@ If you want to learn more about building native executables, please consult http
 
 ## Build and Deploy on OpenShift
 
+Add this to `application.properties`
+```
+quarkus.kubernetes-client.trust-certs=true
+```
+
 Quarkus CLI
 ```
 quarkus build -Dquarkus.kubernetes-client.api-server-url=<your-openshift-cluster-api-endpoint> -Dquarkus.kubernetes-client.token=<your-openshift-token>
-quarkus build -Dquarkus.openshift.deploy=true
+quarkus build -Dquarkus.openshift.deploy=true 
 ```
 
 Maven
