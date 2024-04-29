@@ -114,6 +114,9 @@
                             <goal>generate-code</goal>
                             <goal>generate-code-tests</goal>
                         </goals>
+                        <configuration>
+                            <uberJar>true</uberJar>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
