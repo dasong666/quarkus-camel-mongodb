@@ -21,7 +21,7 @@ public class MyMongoDBAppTest {
             .contentType("application/json")
             .body(requestBody)
             .when()
-            .put("/putajson?dbname=testDB&collectionName=testCollection")
+            .put("/mongo/putajson?dbname=testDB&collectionName=testCollection")
             .then()
             .statusCode(200)
             .body("message", equalTo("Data inserted successfully into testDB.testCollection"),
